@@ -23,8 +23,15 @@ def analyze_activity(user_ids: list[str]) -> tuple[dict[str, int], int, str]:
     Пример:
         analyze_activity(["a", "b", "a"]) -> ({"a": 2, "b": 1}, 2, "a")
     """
-    # TODO: ваш код здесь
-    ...
+    counts = {}
+    top_user = ""
+    top_count = 0
+    for user_id in user_ids:
+        counts[user_id] = counts.get(user_id, 0) + 1
+        if counts[user_id] > top_count:
+            top_user = user_id
+            top_count = counts[user_id]
+    return counts, len(counts), top_user
 
 
 if __name__ == "__main__":
