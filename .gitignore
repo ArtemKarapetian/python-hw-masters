@@ -20,3 +20,5 @@ solutions/
 .env
 _private
 hw*-tests
+
+.idea
